@@ -41,6 +41,7 @@ a { color: inherit; text-decoration: none; }
 .site-nav a:hover, .text-link:hover { color: #87a82c; }
 .header-cta { border: 1px solid #c9cabe; border-radius: 30px; padding: 11px 16px; }
 .header-cta span { margin-left: 8px; }
+.nav-toggle, .nav-toggle-label { display: none; }
 
 .hero { position: relative; min-height: 628px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding-top: 12px; }
 .hero-copy { position: relative; z-index: 1; padding-bottom: 36px; }
@@ -186,6 +187,54 @@ a { color: inherit; text-decoration: none; }
   .site-footer p { order: 2; flex-basis: calc(100% - 75px); }
   .back-top { order: 3; }
   .copyright { order: 4; }
+}
+@media (max-width: 600px) {
+  .site-header { position: relative; z-index: 20; }
+  .nav-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .nav-toggle-label {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid #c9cabe;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .nav-toggle-label span { width: 15px; height: 1px; background: var(--ink); transition: transform .2s ease, opacity .2s ease; }
+  .nav-toggle:checked + .nav-toggle-label span:first-child { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked + .nav-toggle-label span:last-child { transform: translateY(-6px) rotate(-45deg); }
+  .nav-toggle:focus-visible + .nav-toggle-label { outline: 2px solid #79952c; outline-offset: 3px; }
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 12px 24px #1c211d14;
+  }
+  .nav-toggle:checked ~ .site-nav { display: flex; }
+  .site-nav a { padding: 14px 12px; font-size: 13px; }
+  .site-nav a + a { border-top: 1px solid var(--line); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
