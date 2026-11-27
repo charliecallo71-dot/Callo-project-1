@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <input class="theme-toggle-state" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+  <div class="site-shell">
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Charlie Callo, home">cc<span>.</span></a>
     <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu">
@@ -19,7 +21,12 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="header-cta" href="mailto:hello@example.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    <div class="header-actions">
+      <label class="theme-toggle-label" for="theme-toggle" aria-hidden="true">
+        <span class="theme-moon">☾</span><span class="theme-sun">☼</span>
+      </label>
+      <a class="header-cta" href="mailto:hello@example.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main>
@@ -149,5 +156,6 @@
     <a class="back-top" href="#home">BACK TO TOP ↑</a>
     <span class="copyright">© 2025 CHARLIE CALLO</span>
   </footer>
+  </div>
 </body>
 </html>
