@@ -117,7 +117,9 @@ a { color: inherit; text-decoration: none; }
 .about-symbol { display: block; margin-top: 47px; color: #91aa43; font-size: 45px; }
 .about-copy h2 { font-size: 42px; }
 .about-copy > p { max-width: 500px; margin: 23px 0; color: #656b61; font-size: 14px; line-height: 1.85; }
-.skills { display: flex; flex-wrap: wrap; gap: 8px; margin: 25px 0 28px; }
+.about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 25px 0 28px; }
+.detail-group .eyebrow { margin-bottom: 11px; color: var(--muted); }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; }
 .skills span { border: 1px solid #c6cabc; border-radius: 30px; padding: 9px 13px; font-size: 10px; }
 
 .contact-section { position: relative; overflow: hidden; padding-top: 103px; padding-bottom: 103px; }
@@ -178,6 +180,7 @@ a { color: inherit; text-decoration: none; }
   .project-info h3 { font-size: 16px; }
   .project-info p { max-width: 190px; line-height: 1.5; }
   .about-copy h2 { font-size: 34px; }
+  .about-details { grid-template-columns: 1fr; gap: 17px; }
   .contact-section h2 { font-size: clamp(53px, 14vw, 70px); letter-spacing: -3.5px; }
   .contact-decoration { right: -74px; top: 98px; font-size: 190px; }
   .site-footer p { order: 2; flex-basis: calc(100% - 75px); }
